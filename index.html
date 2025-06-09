@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Formularz kontaktowy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: Tahoma;
-      background: #111111;
+      background-color: #111111;
     }
 
     form {
@@ -22,7 +24,7 @@
       width: 100%;
       padding: 10px;
       font-size: 16px;
-      color: #111111;
+      color: #FFFFFF;
       border: 1px solid #B19034;
       border-radius: 0;
       background: transparent;
@@ -53,22 +55,29 @@
       min-height: 100px;
     }
 
-    label.checkbox {
-  display: flex;
-  align-items: flex-start; /* <--- zmiana */
-  font-size: 14px;
+    .checkbox-wrapper {
+       display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 8px;
   margin-bottom: 16px;
+  color: #FFFFFF;
+  font-size: 14px;
   line-height: 1.4;
     }
 
-label.checkbox input[type="checkbox"] {
-  margin-top: 3px; /* <--- delikatna korekta */
+    .checkbox-wrapper input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
     }
 
-    label.checkbox a {
+    .checkbox-wrapper label {
+      display: inline;
+    }
+
+    .checkbox-wrapper a {
       color: #B19034;
       text-decoration: underline;
-      margin-left: 4px;
     }
 
     button {
@@ -91,13 +100,14 @@ label.checkbox input[type="checkbox"] {
     <input type="text" name="last_name" placeholder="np. Kowalska" required>
     <input type="email" name="email" placeholder="np. ewa@gmail.com" required>
     <input type="tel" name="phone" placeholder="np. 687 456 321">
-
     <textarea name="message" placeholder="Tutaj wpisz swoją wiadomość..." required></textarea>
 
-    <label class="checkbox">
-      <input type="checkbox" required>
-      <span style="margin-left: 8px;">Zgadzam się z <a href="/regulamin" target="_blank">regulaminem</a></span>
-    </label>
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="zgoda" required>
+      <label for="zgoda">
+        Zgadzam się z <a href="/regulamin" target="_blank">regulaminem</a>
+      </label>
+    </div>
 
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
     
