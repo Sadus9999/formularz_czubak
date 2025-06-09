@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Formularz kontaktowy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Tahoma;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: black;
+      border: 2px solid black;
+      border-radius: 8px;
+      background: transparent;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      font-family: Tahoma;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #B3B3B3;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    label.checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    label.checkbox a {
+      color: #BE0000;
+      text-decoration: underline;
+      margin-left: 4px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #BE0000;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-family: Tahoma;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form action="https://formspree.io/f/mjkwlwyk" method="POST">
+    <input type="text" name="first_name" placeholder="Imię" required>
+    <input type="text" name="last_name" placeholder="Nazwisko" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="tel" name="phone" placeholder="Telefon">
+
+    <textarea name="message" placeholder="Wiadomość" required></textarea>
+
+    <label class="checkbox">
+      <input type="checkbox" required>
+      <span style="margin-left: 8px;">Zgadzam się z <a href="/regulamin" target="_blank">regulaminem</a></span>
+    </label>
+
+    <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
+    
+    <button type="submit">Wyślij</button>
+  </form>
+</body>
+</html>
