@@ -54,10 +54,15 @@
     }
 
     label.checkbox {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start; /* <--- zmiana */
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+    }
+
+label.checkbox input[type="checkbox"] {
+  margin-top: 3px; /* <--- delikatna korekta */
     }
 
     label.checkbox a {
