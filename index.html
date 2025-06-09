@@ -8,30 +8,44 @@
       margin: 0;
       padding: 0;
       font-family: Tahoma;
+      background: transparent;
     }
 
     form {
       max-width: 400px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0;
+      background: transparent;
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
       font-size: 16px;
-      color: black;
-      border: 2px solid black;
-      border-radius: 8px;
+      color: #111111;
+      border: 1px solid #B19034;
+      border-radius: 0;
       background: transparent;
       box-sizing: border-box;
       margin-bottom: 12px;
       font-family: Tahoma;
+      outline: none;
+      transition: border-width 0.2s ease;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: #B3B3B3;
+      color: #3D3D3D;
+    }
+
+    input:hover,
+    textarea:hover {
+      border-width: 3px;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-width: 6px;
     }
 
     textarea {
@@ -47,18 +61,18 @@
     }
 
     label.checkbox a {
-      color: #BE0000;
+      color: #B19034;
       text-decoration: underline;
       margin-left: 4px;
     }
 
     button {
       width: 100%;
-      background-color: #BE0000;
-      color: white;
+      background-color: #B19034;
+      color: #111111;
       padding: 12px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 0;
       font-family: Tahoma;
       font-size: 19px;
       font-weight: bold;
@@ -68,12 +82,12 @@
 </head>
 <body>
   <form action="https://formspree.io/f/mjkwlwyk" method="POST">
-    <input type="text" name="first_name" placeholder="Imię" required>
-    <input type="text" name="last_name" placeholder="Nazwisko" required>
-    <input type="email" name="email" placeholder="E-mail" required>
-    <input type="tel" name="phone" placeholder="Telefon">
+    <input type="text" name="first_name" placeholder="np. Ewa" required>
+    <input type="text" name="last_name" placeholder="np. Kowalska" required>
+    <input type="email" name="email" placeholder="np. ewa@gmail.com" required>
+    <input type="tel" name="phone" placeholder="np. 687 456 321">
 
-    <textarea name="message" placeholder="Wiadomość" required></textarea>
+    <textarea name="message" placeholder="Tutaj wpisz swoją wiadomość..." required></textarea>
 
     <label class="checkbox">
       <input type="checkbox" required>
@@ -82,7 +96,7 @@
 
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
     
-    <button type="submit">Wyślij</button>
+    <button type="submit">Prześlij</button>
   </form>
 </body>
 </html>
